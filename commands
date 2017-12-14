@@ -1,0 +1,20 @@
+#find unique number of IP addresses
+cat ipaddresses.txt | sort -u | wc -l 
+
+#creates a unique list of ip addresses from a file using regex
+for i in *; do cat $i | tr -s "," "\n" | egrep "^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$" | sort -u | uniq >> ipaddresses.txt; done
+
+#converts a dos file to unix
+dos2unix -n ip_list_new.txt ip_list_converted.txt 
+
+#this checks a file for a carriage return that can sometimes make certain linux commands not work
+cat -vet ip_list.txt
+
+#fixes carriage return error that happens when .txt file is created in windows
+tr -d '\15\32' < ip_list.txt > ip_list_new.txt 
+
+#uses lines in text file as a pattern matching tool for parsing through logs
+grep -r -F -f ip_list.txt 
+
+#convert xlsx to csv for parsing with command line
+ssconvert -T Gnumeric_stf:stf_csv "input_file" -S "output_file" 
