@@ -1,0 +1,43 @@
+NETWORK TRIAGE TASKS [K1A]
+NT-1. HTTP
+	NT-1a. HTTP requests for servers not listening on port 80
+	NT-1b. Unique listing of HTTP mime types
+	NT-1c. Unique listing of HTTP User Agent strings
+	NT-1d. Listing of HTTP GET and POST requests that are abnormally long or encoded
+	NT-1e. Web requests, sorted by count, that are abnormal or contain non-dictionary words
+NT-2. DNS
+	NT-2a. DNS queries resulting in a non-existent domain
+	NT-2b. DNS queries to non-DoD destination IP addresses (ie. Google)
+	NT-2c. DNS TCP zone transfers
+	NT-2d. Show DNS queries containing abnormally long strings
+NT-3. FTP
+	NT-3a. FTP log output
+	NT-3b. MIME type of files
+NT-4. SSH 
+	NT-4a. Unique listing of SSH user agent strings and destination IP addresses
+	NT-4b. Failed inbound SSH Logins 
+	NT-4c. SSH data in/data out
+NT-5. SSL
+	NT-5a. SSL Cipher output (least common)
+	NT-5b. Web requests, sorted by count, that are abnormal or contain non-dictionary words
+NT-6. RDP
+	NT-6a. Unique listing of RDP connections with source/destination IP and destination port
+	NT-6b. NON-US Keyboard characterization.
+NT-7. Software
+	NT-7a. Unique list of least common destination IP/ports in CONN log
+	NT-7b. Software names present on the network
+NT-8. Portable Executables seen traversing the wire
+NT-9. Miscellaneous & Weird
+	NT-9a. Tunnel information
+	NT-9b. Sorted listing of MIME types seen in any Bro log
+	NT-10. Systems sending more data than receiving
+	NT-11. SMB communication information: filesnames, commands, mounts, host to host communication, etc.
+	NT-11b. Long lasting connections
+	NT-11c. Traffic sent/received sorted by count to display highest amount
+NT-10. Dshell (PCAP input)
+	NT-12. Various modules that take PCAP as input and output PSEXEC use, rip HTTP files, netflow, smb file extraction, etc.
+NT-11. RITA (Real Intelligence Threat Analytics (Bro log input)
+	NT-13. Beacon detection
+	NT-14. DNS tunnel detection
+	NT-15. URL length analysis
+	NT-16. Portscan detection
